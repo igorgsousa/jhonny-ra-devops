@@ -31,6 +31,8 @@ jobs:
         path: ./target/
   
   docker-image:
+   needs: [build]
+   
    runs-on: ubuntu-latest
    steps:
   
