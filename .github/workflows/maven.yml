@@ -44,5 +44,11 @@ jobs:
        name: artifact
        path: target
   
-   - run: cd target && ls 
+   - name: Build coker image and push
+     env:
+      IMAGE_NAME: igorguilherme/jhonnyra-devops
+      IMAGE_TAG: latest
+      run: |
+       docker build -t $IMAGE_NAME:$IMAGE_TAG .
+       docker push $IMAGE_NAME:$IMAGE_TAG
   
