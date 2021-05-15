@@ -38,7 +38,10 @@ jobs:
   
    - uses: actions/checkout@v2
 
-   - run: mkdir target && cd target
+   - run: mkdir target
+   
+   - name: Prepare for download
+     working-directory: ./target 
 
    - name: Download artifact
      uses: actions/download-artifact@v2
@@ -46,8 +49,9 @@ jobs:
        name: artifact
    
    - run: ls 
-
-   - run: cd .. 
+  
+   - name: Prepare for docker build
+     working-directory: /    
    
    - run: ls 
 
