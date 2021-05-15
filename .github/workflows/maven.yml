@@ -44,5 +44,5 @@ jobs:
        name: artifact
        path: target
   
-   - run: ls 
+   - run: cd target && ls 
   
